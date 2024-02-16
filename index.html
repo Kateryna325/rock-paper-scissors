@@ -34,13 +34,18 @@
       } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
         return 'That`s a draw!'
       }
+    }
 
     function playGame () {
-      let playerMove = prompt('What`s your move?');
-      for (let i = 1; i <= 5; i++)
-        playRound(playerMove.toLowerCase, getComputerChoice())
+      for (let i = 1; i <= 5; i++) {
+        let playerMove = prompt('What`s your move?');
+        playerMove = playerMove.toLowerCase();
+        let computerMove = getComputerChoice();
+        console.log(playRound(playerMove, computerMove));
+        
+      }
     }
-    }
+    
   </script>
 </body>
 </html>
