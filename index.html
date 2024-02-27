@@ -50,6 +50,9 @@
     const paper = document.createElement('button');
     const scissors = document.createElement('button');
     
+    rock.onclick = playRound('rock', getComputerChoice());
+    paper.onclick = playRound('paper', getComputerChoice());
+    scissors.onclick = playRound('scissors', getComputerChoice());
   </script>
 </body>
 </html>
