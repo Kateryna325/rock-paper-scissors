@@ -8,6 +8,7 @@
 <body>
 
   <div></div>
+  <div class="buttons"></div>
 
   <script>
     function getComputerChoice () {
@@ -55,6 +56,16 @@
     rock.onclick = playRound('rock', getComputerChoice());
     paper.onclick = playRound('paper', getComputerChoice());
     scissors.onclick = playRound('scissors', getComputerChoice());
+
+    rock.textContent = 'Rock';
+    paper.textContent = 'Paper';
+    scissors.textContent = 'Scissors';
+
+    const buttons = document.querySelector('.buttons');
+
+    buttons.appendChild(rock);
+    buttons.appendChild(paper);
+    buttons.appendChild(scissors);
   </script>
 </body>
 </html>
