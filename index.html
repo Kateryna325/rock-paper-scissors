@@ -44,37 +44,29 @@
 
     function playRound (playerSelection, computerSelection) {
       if (playerSelection === 'rock' && computerSelection === 'rock') {
-        result.appendChild(document.createTextNode('That`s a draw!'));  
+        result.appendChild(document.createTextNode('That`s a draw! '));  
       } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        result.appendChild(document.createTextNode('You lose! Paper beats rock'));  
+        result.appendChild(document.createTextNode('You lose! Paper beats rock '));  
       } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        result.appendChild(document.createTextNode('You win! Rock beats scissors'));  
+        result.appendChild(document.createTextNode('You win! Rock beats scissors '));  
       } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        result.appendChild(document.createTextNode('You win! Paper beats rock'));  
+        result.appendChild(document.createTextNode('You win! Paper beats rock '));  
       } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-        result.appendChild(document.createTextNode('That`s a draw!'));  
+        result.appendChild(document.createTextNode('That`s a draw! '));  
       } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        result.appendChild(document.createTextNode('You lose! Scissors beat paper'));  
+        result.appendChild(document.createTextNode('You lose! Scissors beat paper '));  
       } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        result.appendChild(document.createTextNode('You lose! Rock beats scissors'));  
+        result.appendChild(document.createTextNode('You lose! Rock beats scissors '));  
       } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        result.appendChild(document.createTextNode('You win! Scissors beat paper'));  
+        result.appendChild(document.createTextNode('You win! Scissors beat paper '));  
       } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-        result.appendChild(document.createTextNode('That`s a draw!'));  
+        result.appendChild(document.createTextNode('That`s a draw! '));  
       } else {
         return '';
       }
     }
 
-    /*function playGame () {
-      for (let i = 1; i <= 5; i++) {
-        let playerMove = prompt('What`s your move?');
-        playerMove = playerMove.toLowerCase();
-        let computerMove = getComputerChoice();
-        console.log(playRound(playerMove, computerMove));
-        
-      } 
-    }*/ 
+    
 
     rock.addEventListener('click', () => {
       playRound('rock', getComputerChoice())
