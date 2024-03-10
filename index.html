@@ -7,39 +7,66 @@
 </head>
 <body>
 
-  <div></div>
   <div class="buttons"></div>
+  <div class="result"></div>
+  
 
   <script>
+
+    const rock = document.createElement('button');
+    const paper = document.createElement('button');
+    const scissors = document.createElement('button');
+    
+    
+
+    rock.innerText = 'Rock';
+    paper.innerText = 'Paper';
+    scissors.innerText = 'Scissors';
+
+    
+
+    const buttons = document.querySelector('.buttons');
+
+    buttons.appendChild(rock);
+    buttons.appendChild(paper);
+    buttons.appendChild(scissors);
+
+    
+    let result = document.querySelector('.result');
+    
+    
+
     function getComputerChoice () {
       let choices = ['rock', 'paper', 'scissors'];
-      let choice = choices[Math.floor(Math.random() * choices.length)];
-      return choice;
+      return choices[Math.floor(Math.random() * choices.length)];
+      
     }
 
     function playRound (playerSelection, computerSelection) {
       if (playerSelection === 'rock' && computerSelection === 'rock') {
-        return 'That`s a draw!'
+        result.appendChild(document.createTextNode('That`s a draw!'));  
       } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        return 'You lose! Paper beats rock'
+        result.appendChild(document.createTextNode('You lose! Paper beats rock'));  
       } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        return 'You win! Rock beats scissors'
+        result.appendChild(document.createTextNode('You win! Rock beats scissors'));  
       } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        return 'You win! Paper beats rock'
+        result.appendChild(document.createTextNode('You win! Paper beats rock'));  
       } else if (playerSelection === 'paper' && computerSelection === 'paper') {
-        return 'That`s a draw!'
+        result.appendChild(document.createTextNode('That`s a draw!'));  
       } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        return 'You lose! Scissors beat paper'
+        result.appendChild(document.createTextNode('You lose! Scissors beat paper'));  
       } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        return 'You lose! Rock beats scissors'
+        result.appendChild(document.createTextNode('You lose! Rock beats scissors'));  
       } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        return 'You win! Scissors beat paper'
+        result.appendChild(document.createTextNode('You win! Scissors beat paper'));  
       } else if (playerSelection === 'scissors' && computerSelection === 'scissors') {
-        return 'That`s a draw!'
+        result.appendChild(document.createTextNode('That`s a draw!'));  
+      } else {
+        return '';
       }
     }
 
-    function playGame () {
+    /*function playGame () {
       for (let i = 1; i <= 5; i++) {
         let playerMove = prompt('What`s your move?');
         playerMove = playerMove.toLowerCase();
@@ -47,25 +74,20 @@
         console.log(playRound(playerMove, computerMove));
         
       } 
-    } 
+    }*/ 
 
-    const rock = document.createElement('button');
-    const paper = document.createElement('button');
-    const scissors = document.createElement('button');
+    rock.addEventListener('click', () => {
+      playRound('rock', getComputerChoice())
+    });
     
-    rock.onclick = playRound('rock', getComputerChoice());
-    paper.onclick = playRound('paper', getComputerChoice());
-    scissors.onclick = playRound('scissors', getComputerChoice());
+    paper.addEventListener('click', () => {
+      playRound('paper', getComputerChoice())
+    });
+    scissors.addEventListener('click', () => {
+      playRound('scissors', getComputerChoice())
+    });
 
-    rock.textContent = 'Rock';
-    paper.textContent = 'Paper';
-    scissors.textContent = 'Scissors';
-
-    const buttons = document.querySelector('.buttons');
-
-    buttons.appendChild(rock);
-    buttons.appendChild(paper);
-    buttons.appendChild(scissors);
+    
   </script>
 </body>
 </html>
